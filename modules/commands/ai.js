@@ -11,7 +11,7 @@ module.exports.config = {
 
 const axios = require('axios');
 const fs = require('fs');
-const path = __dirname + '/cache/gemini-response.json';
+const path = __dirname + 'modules/cache/gemini-response.json';
 
 module.exports.run = async function ({ api, event, args }) {
     if (args.length == 0) {
