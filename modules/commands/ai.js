@@ -20,7 +20,7 @@ module.exports.run = async function ({ api, event, args }) {
     }
 
     const inputText = args.join(" ");
-    const apiKey = ""; // Thay bằng API key của bạn
+    const apiKey = "AIzaSyCeAYfbJJ0Jlkz4jdAcjicvcXm1Y-hxR44"; // Thay bằng API key của bạn
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
     const payload = {
