@@ -18,7 +18,7 @@ this.run = async function ({ args, api, event }) {
   const send = msg => api.sendMessage(msg, event.threadID, event.messageID);
 
   if (!vhks || !hks) {
-    return send(`Check Minecraft Status Server\nUsage: ${this.config.usages}`, event.threadID);
+    return send(`Kiểm Tra Trạng Thái của 1 server MC\nUsage: ${this.config.usages}`, event.threadID);
   }
 
   try {
