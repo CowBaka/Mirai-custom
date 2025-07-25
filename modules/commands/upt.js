@@ -88,22 +88,12 @@ module.exports = {
             const botStatus = (pingReal < 200) ? 'mượt mà' : (pingReal < 800) ? 'bình thường' : 'lag';
 
             const fullInfo = `
-⏰ Thời gian hiện tại: ${moment().tz('Asia/Ho_Chi_Minh').format('HH:mm:ss | DD/MM/YYYY')}
-⏱️ Thời gian hoạt động: ${uptimeString}
-📝 Tiền tố lệnh mặc định: ${global.config.PREFIX}
-🗂️ Số lượng gói phụ thuộc: ${dependencyCount >= 0 ? dependencyCount : "Không xác định"}
-🔣 Trạng thái bot: ${botStatus}
-📋 Hệ điều hành: ${os.type()} ${os.release()} (${os.arch()})
-💻 CPU: ${os.cpus().length} core(s)
-   Sử dụng: ${cpuUsage}%
-📊 RAM hệ thống: ${systemRAM.usedMem}MB/${systemRAM.totalMem}MB (đã sử dụng)
-🧠 Bộ nhớ Heap:
-   Tổng: ${heapMemory.heapTotal}MB
-   Đã dùng: ${heapMemory.heapUsed}MB
-   Bên ngoài: ${heapMemory.external}MB
-   RSS: ${heapMemory.rss}MB
-🛢️ RAM hệ thống còn trống: ${(systemRAM.freeMem / 1024).toFixed(2)}GB
-🛜 Ping: ${pingReal}ms
+°Furin Uptime :>
+°Thời gian hoạt động: ${uptimeString}
+°Trạng thái bot: ${botStatus}
+°RAM còn lại: ${(systemRAM.freeMem / 1024).toFixed(2)}GB
+°Ping: ${pingReal}ms
+° * Sử dụng /upt cpu/ram để tìm hiểu sâu ! *
 `.trim();
 
             const cpuInfo = `
