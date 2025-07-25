@@ -4,8 +4,8 @@ this.config = {
   name: "status",
   version: "1.1.1",
   hasPermission: 0,
-  credits: "HuyKaiser",
-  description: "Check Minecraft server status",
+  credits: "HuyKaiser và Furin",
+  description: "Kiểm Tra Trạng Thái của 1 máy chủ Minecraft",
   commandCategory: "Tìm kiếm",
   usages: "Java/BedRock + ip:port",
   cooldowns: 2,
@@ -40,7 +40,7 @@ this.run = async function ({ args, api, event }) {
     const c = motd.clean || "Không có dữ liệu";
     const d = gamemode || "Không có dữ liệu";
 
-    send(`°Furin kiểm tra trạng thái\nModel: [ Java/Bedrock ]\nOnline: ${online}\nServer: ${host}:${port}\nHost: ${host}\nPort: ${port}\nOnline: ${a}\nMax Players: ${b}\nTên Server: ${c}\nPhiên Bản: ${serverVersion.name}\n•Kiểm Tra bởi Furin Track Server `,
+    send(`°Furin kiểm tra trạng thái\nOnline: ${online}\nServer: ${host}:${port}\nHost: ${host}\nPort: ${port}\nOnline: ${a}\nMax Players: ${b}\nMotd Server: ${c}\nPhiên Bản: ${serverVersion.name}\n•Kiểm Tra bởi Furin Tracking Mc Server `,
       event.threadID
     );
   } catch (error) {
