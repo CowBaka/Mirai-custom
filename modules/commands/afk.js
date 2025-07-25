@@ -23,7 +23,7 @@ module.exports.handleEvent = async function({ api, event, Users }) {
         var info = busyData[senderID];
         delete busyData[senderID];
         fs.writeFileSync(busyPath, JSON.stringify(busyData, null, 4));
-        return api.sendMessage(`Chào mừng bạn đã quay trở lại! 🥰`, threadID, () => {
+        return api.sendMessage(`Đã thoát khỏi chế độ Afk .Chào mừng bạn đã trở lại\n•Lệnh /afk - FurinBucket`, threadID, () => {
             if (info.tag.length == 0) api.sendMessage("Trong lúc bạn đi vắng, không có ai nhắc đến bạn cả", threadID);
             else {
                 var msg = "";
@@ -59,7 +59,7 @@ module.exports.run = async function({ api, event, args, Users }) {
             tag: []
         }
         fs.writeFileSync(busyPath, JSON.stringify(busyData, null, 4));
-        var msg = (content.length == 0) ? 'Bạn đã bật chế độ afk mà không có lí do' : `Bạn đã bật chế độ afk với lí do: ${content}`;
+        var msg = (content.length == 0) ? 'Bạn đã rời khỏi bàn phím của mình mà không có lí do' : `Bạn đã rời khỏi bàn phím của mình :> với lí do: ${content}`;
         return api.sendMessage(msg, threadID, messageID);
     }
 }
