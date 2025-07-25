@@ -1,7 +1,7 @@
 let response;
 let axios = require('axios');
 this.config = {
-  name: "mcstatus",
+  name: "status",
   version: "1.1.1",
   hasPermission: 0,
   credits: "HuyKaiser",
@@ -30,17 +30,17 @@ this.run = async function ({ args, api, event }) {
         response = await axios.get(`https://api.mcstatus.io/v2/status/bedrock/${hks}`);
         break;
       default:
-        return send("Vui Lòng Chọn Phiên Bản Java/BedRock", event.threadID);
+        return send("Vui Lòng Chọn Phiên Bản java/bedRock", event.threadID);
     }
 
     const { online, host, port, players, motd, gamemode, version: serverVersion } = response.data;
 
     const a = players.online || 0;
     const b = players.max || 0;
-    const c = motd.clean || "Not Data!";
-    const d = gamemode || "Not Data!";
+    const c = motd.clean || "Không có dữ liệu";
+    const d = gamemode || "Không có dữ liệu";
 
-    send(`°Furin kiểm tra trạng thái\nModel: [ Java/Bedrock ]\nOnline: ${online}\nServer: ${host}:${port}\nHost: ${host}\nPort: ${port}\nOnline: ${a}\nMax Players: ${b}\Tên Server: ${c}\nPhiên Bản: ${serverVersion.name}\n Kiểm Tra bởi Furin Track Server `,
+    send(`°Furin kiểm tra trạng thái\nModel: [ Java/Bedrock ]\nOnline: ${online}\nServer: ${host}:${port}\nHost: ${host}\nPort: ${port}\nOnline: ${a}\nMax Players: ${b}\nTên Server: ${c}\nPhiên Bản: ${serverVersion.name}\n•Kiểm Tra bởi Furin Track Server `,
       event.threadID
     );
   } catch (error) {
