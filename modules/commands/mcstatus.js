@@ -40,11 +40,11 @@ this.run = async function ({ args, api, event }) {
     const c = motd.clean || "Not Data!";
     const d = gamemode || "Not Data!";
 
-    send(`Check Minecraft Status Server\nMinecraft: [ Java/Bedrock ]\nOnline: ${online}\nServer: ${host}:${port}\nHost: ${host}\nPort: ${port}\nActive Players: ${a}\nMax Players: ${b}\nServer Name: ${c}\nVersion: ${serverVersion.name}\nGamemode: ${d}`,
+    send(`°Furin kiểm tra trạng thái\nModel: [ Java/Bedrock ]\nOnline: ${online}\nServer: ${host}:${port}\nHost: ${host}\nPort: ${port}\nOnline: ${a}\nMax Players: ${b}\Tên Server: ${c}\nPhiên Bản: ${serverVersion.name}\n Kiểm Tra bởi Furin Track Server `,
       event.threadID
     );
   } catch (error) {
-    send(`Lỗi Không Tìm Thấy Server`, event.threadID);
+    send(`Furin Không Thể tìm thấy server . Vui lòng thử lại nhé`, event.threadID);
   }
 };
       
