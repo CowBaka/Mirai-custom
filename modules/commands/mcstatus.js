@@ -1,7 +1,7 @@
 let response;
 let axios = require('axios');
 this.config = {
-  name: "status",
+  name: "mcstatus",
   version: "1.1.1",
   hasPermission: 0,
   credits: "HuyKaiser và Furin",
