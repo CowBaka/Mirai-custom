@@ -6,7 +6,7 @@ module.exports.config = {
   description: "Bật hoặc tắt chế độ afk",
   usages: "[lí do]",
   commandCategory: "Thành Viên",
-  cooldowns: 5
+  cooldowns: 45
 };
 
 const busyPath = __dirname + '/cache/data/busy.json';
