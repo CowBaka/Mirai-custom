@@ -49,21 +49,21 @@ module.exports.run = async ({
   if (b[0] == "on") {
     g.camtu.enables = true;
     j(e, JSON.stringify(c, null, "\t"));
-    return f.sendMessage("[ MODE ] - Auto cấm từ đã được bật", a.threadID, a.messageID);
+    return f.sendMessage("[ Furin ] - Auto cấm từ đã được bật", a.threadID, a.messageID);
   } else if (b[0] == "off") {
     g.camtu.enables = false;
     j(e, JSON.stringify(c, null, "\t"));
-    return f.sendMessage("[ MODE ] - Auto cấm từ đã được tắt", a.threadID, a.messageID);
+    return f.sendMessage("[ Furin ] - Auto cấm từ đã được tắt", a.threadID, a.messageID);
   } else if (b[0] == "add") {
     if (!b[1]) {
-      return f.sendMessage("[ MODE ] - Vui lòng nhập từ cần thêm vào danh sách", a.threadID, a.messageID);
+      return f.sendMessage(" Vui lòng nhập từ cần thêm vào từ điển cấm của furin!", a.threadID, a.messageID);
     }
     const i = b.slice(1).join(" ");
     let d = i.split(",").map(b => b.trim());
     d = d.filter(b => !g.camtu.words.includes(b));
     g.camtu.words.push(...d);
     j(e, JSON.stringify(c, null, "\t"));
-    return f.sendMessage("[ MODE ] - Đã thêm " + d.length + " từ vào danh sách", a.threadID, a.messageID);
+    return f.sendMessage("Furin đã thêm " + d.length + " từ vào từ điển cấm!", a.threadID, a.messageID);
   } else if (b[0] == "del") {
     const i = b.slice(1).join(" ");
     let d = i.split(",").map(b => b.trim());
@@ -72,9 +72,9 @@ module.exports.run = async ({
       g.camtu.words.splice(g.camtu.words.indexOf(b), 1);
     }
     j(e, JSON.stringify(c, null, "\t"));
-    return f.sendMessage("[ MODE ] - Đã xóa " + d.length + " từ khỏi danh sách", a.threadID, a.messageID);
+    return f.sendMessage("Furin Đã xóa " + d.length + " từ khỏi từ điển cấm!", a.threadID, a.messageID);
   } else if (b[0] == "list") {
-    let b = "[ MODE ] - Danh sách từ cấm:\n";
+    let b = "Furin Wiki | Từ điển các từ bị cấm:\n";
     g.camtu.words.forEach(c => b += " - " + c + "\n");
     return f.sendMessage(b, a.threadID, a.messageID);
   } else {
