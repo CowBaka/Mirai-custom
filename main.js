@@ -223,6 +223,11 @@ function onBot({ models: botModel }) {
                 return clearFacebookWarning(api, () => process.exit(1));
             }
         loginApiData.setOptions(global.config.FCAOption)
+        global.simulateTyping = true;
+        require("./utils/typing").patchSendMessage(loginApiData, {
+        interval: 70,    // chỉnh tốc độ gõ mỗi ký tự
+        minLength: 1     // chỉ gõ tay nếu chuỗi dài hơn 1 ký tự
+    });
         writeFileSync(appStateFile, JSON.stringify(loginApiData.getAppState(), null, '\x09'))
         global.client.api = loginApiData
         global.config.version = '2.7.12'
